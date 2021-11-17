@@ -1,7 +1,9 @@
 FROM ubuntu:latest
- 
-RUN apt-get update
-RUN apt-get install -y python3.6 python3-pip 
+
+RUN apt -f install
+RUN apt update && sudo apt dist-upgrade
+
+RUN apt install python3-pip
 RUN pip3 install flask
 RUN pip3 install --upgrade pip3
 
