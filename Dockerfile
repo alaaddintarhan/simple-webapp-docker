@@ -1,15 +1,22 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
-RUN apt -f install
-RUN apt update && apt dist-upgrade
+MAINTANER Your Name "alaaddintarhan26@gmail.com"
 
-RUN apt install python3-pip
-RUN pip3 install flask
-RUN pip3 install --upgrade pip3
+RUN apt-get update -y && \
+    apt-get install -y python-pip python-dev
 
-COPY app.py /opt/
-COPY requirements.txt /opt/
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./requirements.txt /app/requirements.txt
 
-RUN pip3 install -r /opt/requirements.txt
+WORKDIR /app
+
+RUN pip install -r requirements.txt
+
+COPY . /app
+
+# ENTRYPOINT [ "python" ]
+# CMD [ "app.py" ]
 
 ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8080
+
+
