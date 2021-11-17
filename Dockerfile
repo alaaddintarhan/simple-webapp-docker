@@ -1,7 +1,9 @@
 FROM ubuntu:16.04
  
 RUN apt-get update && apt-get install -y python3 python-pip
-RUN pip install -u flask
+RUN sudo apt install python3-venv
+RUN pip install flask
+RUN python -m flask --version
 
 COPY app.py /opt/
 COPY requirements.txt /opt/
