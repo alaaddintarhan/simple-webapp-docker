@@ -17,6 +17,6 @@ COPY . /app
 # ENTRYPOINT [ "python" ]
 # CMD [ "app.py" ]
 
-ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8080
+ENTRYPOINT FLASK_APP=/app/app.py flask run --host=0.0.0.0 --port=8080
 
 
