@@ -1,1 +1,2 @@
-Flask==1.1.4
+Flask
+supervisor==4.1.0
