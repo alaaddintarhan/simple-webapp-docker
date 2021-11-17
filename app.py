@@ -1,5 +1,8 @@
 from flask import Flask
 app = Flask(__name__)
+
+print (“Hello Openshift”)
+
 @app.route('/')
 def hello():
     return 'Congratulations! you have successfully host Flask in a Docker container!'
