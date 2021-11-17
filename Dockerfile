@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt -f install
-RUN apt update && sudo apt dist-upgrade
+RUN apt update && apt dist-upgrade
 
 RUN apt install python3-pip
 RUN pip3 install flask
