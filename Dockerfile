@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y python python-pip
 
-COPY  app.py.txt /opt/
+COPY  app.py /opt/
 COPY  requirements.txt /opt/
 
 RUN pip install -r /opt/requirements.txt
