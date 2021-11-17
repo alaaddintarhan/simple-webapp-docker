@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get install -y python python-pip
 
 COPY app.py /opt/
-COPY ./requirements.txt /opt/
+COPY ./requirements.txt /bin/sh/
 
 RUN pip install flask
 RUN pip install -r requirements.txt
