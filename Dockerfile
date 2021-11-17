@@ -2,7 +2,6 @@ FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y python python-pip
 RUN pip install --upgrade setuptools pip wheel 
-RUN pip install --user --upgrade pip
 
 RUN pip install -r requirements.txt
 RUN pip install flask  
