@@ -1,10 +1,9 @@
 FROM ubuntu:16.04
+ENV PATH=/home/ubuntu/.virtualenvs/bin:$PATH
 
 RUN apt-get update && apt-get install -y python python-pip
-
-RUN pip install flask 
 RUN pip install -r requirements.txt
+RUN pip install flask
 COPY app.py /opt/
-COPY requirements.txt /opt/
 
 ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=808
